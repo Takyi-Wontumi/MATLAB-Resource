@@ -1,0 +1,48 @@
+notes:
+we need m, c, k, F_0, forced freq.
+to find: nat_freq, static_deflection, damping ratio, X (amplitude), damped_freq, phase
+what happens if c = 0;
+how does matlab handle radians
+phase angle calculations for different modes
+particular solutions
+
+-----------------------------------------------------------------
+Undamped system (ζ = 0)
+--- Input Variables ---
+
+mass(m): 1.000 kg |	Mass(M): 100.000 kg |	Radius(r): 0.375 m	
+(ω_forced): 167.552 rad/s |	(k): 9500000.000 N/m
+(c): 0.000 Ns/m |	Initial Force (F): 10527.578 N
+x_cond (x_o): 0.000 m |	xdot_cond (xdot_o): 62.832 m/s
+
+--- Calculated Variables ---
+
+(ω_nat): 308.221 rad/s |	(δ): 0.001 m | 	(ζ): 0.000
+X: 0.00111 m
+(ϕ): 0.000 rad
+(ω_d): 308.221 rad/s
+Initial Condition Constants:
+U (C1): 0.000 |	V (C2): 0.203
+---------------------------
+0.20324905746837049868301318714868*sin(308.22100000001955777406692504883*t) + 0.0011114505664693297148915007710457*sin(167.55160819145385175943374633789*t)
+ 
+----------------------------------------------------------------------
+Underdamped system (ζ < 1)
+--- Input Variables ---
+
+mass(m): 1.000 kg |	Mass(M): 100.000 kg |	Radius(r): 0.375 m	
+(ω_forced): 167.552 rad/s |	(k): 9500000.000 N/m
+(c): 50.000 Ns/m |	Initial Force (F): 10527.578 N
+x_cond (x_o): 0.000 m |	xdot_cond (xdot_o): 62.832 m/s
+
+--- Calculated Variables ---
+
+(ω_nat): 308.221 rad/s |	(δ): 0.001 m | 	(ζ): 0.001
+X: 0.00200 m
+(ϕ): 0.001 rad
+(ω_d): 308.221 rad/s
+Initial Condition Constants:
+U (C1): 0.000 |	V (C2): 0.203
+---------------------------
+0.0019999999999997797317519143689424*sin(167.55160819145385175943374633789*t - 0.00087272705115559734423413829063065) + exp(-0.30822100000000318686943501234055*t)*(0.0000017454538807392446647659411951281*cos(308.22084588947473093867301940918*t) + 0.20276613783426000736653804779053*sin(308.22084588947473093867301940918*t))
+ 
